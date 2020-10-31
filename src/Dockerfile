@@ -11,4 +11,4 @@ COPY . /usr/src/app
 
 RUN pwd && ls
 
-CMD [ "python", "./test.py" ]
+CMD [ "python", "/usr/src/app/test.py" ]
