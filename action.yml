@@ -1,0 +1,23 @@
+name: my-test-action
+description: test GitHub Action.
+author: Long0x0
+
+branding:
+  icon: mail
+  color: blue
+
+inputs:
+  account:
+    description: account.
+    required: true
+  password:
+    description: password.
+    required: true
+  token:
+    description: token.
+    required: false
+    default: ''
+
+runs:
+  using: docker
+  image: src/Dockerfile
