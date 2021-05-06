@@ -22,6 +22,7 @@ runs:
   using: "composite"
   steps:
     - run: |
-        pip install -r ${{ github.action_path }}/requirements.txt
-        python ${{ github.action_path }}/test.py
+        ls
+        pip install -r ${{ github.action_path }}/src/requirements.txt
+        python ${{ github.action_path }}/src/test.py
       shell: bash
