@@ -19,5 +19,9 @@ inputs:
     default: ''
 
 runs:
-  using: docker
-  image: src/Dockerfile
+  using: "composite"
+  steps:
+    - run: |
+        pip install -r ${{ github.action_path }}/requirements.txt
+        python ${{ github.action_path }}/test.py
+      shell: bash
