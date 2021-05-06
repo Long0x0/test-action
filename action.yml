@@ -16,13 +16,17 @@ inputs:
   token:
     description: token.
     required: false
-    default: ''
+    default: ""
 
 runs:
   using: "composite"
   steps:
-    - run: |
-        ls
+    - name: Test python
+      env:
+        ACCOUNT: ${{ inputs.account }}
+        PASSWORD: ${{ inputs.password }}
+        INPUT_TOKEN: ${{ inputs.token }}
+      run: |
         pip install -r ${{ github.action_path }}/src/requirements.txt
         python ${{ github.action_path }}/src/test.py
       shell: bash
