@@ -23,9 +23,6 @@ runs:
   steps:
     - name: Test python
       env:
-        ACCOUNT: ${{ inputs.account }}
-        PASSWORD: ${{ inputs.password }}
-        INPUT_TOKEN: ${{ inputs.token }}
       run: |
         pip install -r ${{ github.action_path }}/src/requirements.txt
         python ${{ github.action_path }}/src/test.py
