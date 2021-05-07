@@ -22,6 +22,10 @@ runs:
   using: "composite"
   steps:
     - name: Test python
+      env:
+        INPUT_ACCOUNT: ${{ inputs.account }}
+        INPUT_PASSWORD: ${{ inputs.password }}
+        INPUT_TOKEN: ${{ inputs.token }}
       run: |
         pip install -r ${{ github.action_path }}/src/requirements.txt
         python ${{ github.action_path }}/src/test.py
