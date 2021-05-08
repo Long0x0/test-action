@@ -27,6 +27,11 @@ runs:
         INPUT_PASSWORD: ${{ inputs.password }}
         INPUT_TOKEN: ${{ inputs.token }}
       run: |
-        pip install -r ${{ github.action_path }}/src/requirements.txt
-        python ${{ github.action_path }}/src/test.py
+        ls
+        cd ${{ github.action_path }}
+        ls
+        cd ..
+        cd ${{ github.action_path }}/src
+        pip install -r ./requirements.txt
+        python ./test.py
       shell: bash

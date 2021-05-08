@@ -22,3 +22,8 @@ try:
         print('fail. empty token.')
 except:
     print('fail. no token.')
+
+print(*os.listdir())
+with open("requirements.txt", "r", errors = "ignore") as f:
+    f = f.read()
+    print(f)
